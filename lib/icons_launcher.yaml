@@ -1,0 +1,11 @@
+flutter_launcher_icons:
+  image_path: "assets/logo/Logo.png"
+  platforms:
+    android:
+      enable: true
+      p)
+      icon_size: 192
+    ios:
+      enable: true
+      
+      icon_size: 180
