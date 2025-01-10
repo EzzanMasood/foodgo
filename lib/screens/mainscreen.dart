@@ -3,7 +3,7 @@ import 'package:foodgo/components/boxes.dart';
 import 'package:foodgo/components/buttons.dart';
 import 'package:foodgo/config/colors.dart';
 import 'package:foodgo/config/style.dart';
-import 'package:foodgo/screens/search.dart';
+import 'package:foodgo/screens/search/search.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
