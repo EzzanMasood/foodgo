@@ -55,7 +55,7 @@ class _FirstScreenState extends State<FirstScreen> {
                     MaterialPageRoute(builder: (context) => const SignUp()));
               },
               padding: EdgeInsets.symmetric(
-                  horizontal: screenWidth * 0.4, vertical: screenWidth * 0.03),
+                  horizontal: screenWidth * 0.39, vertical: screenWidth * 0.03),
               border: Border.all(color: AppColors.onBoardButton),
               borderRadius: BorderRadius.circular(8.0),
               child: const ReuseableTextWidget(

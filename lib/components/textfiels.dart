@@ -10,14 +10,14 @@ class MyTextField extends StatelessWidget {
   final EdgeInsets? padding;
 
   const MyTextField({
-    Key? key,
+    super.key,
     required this.hintText,
     this.labelText, 
     this.obscureText = false,
     this.padding,
     this.width,
     this.height,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

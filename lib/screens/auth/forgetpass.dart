@@ -71,29 +71,27 @@ class _ReEmailState extends State<ReEmail> {
             height: 20,
           ),
           Center(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: 10.0,
-              ),
-              child: CustomButton(
+            child:  CustomButton(
                 onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const OtpScreen()));
                 },
-                padding: EdgeInsets.symmetric(
-                    horizontal: screenWidth * 0.4,
-                    vertical: screenWidth * 0.03),
+            
                 color: AppColors.onBoardButton,
+                padding: EdgeInsets.symmetric(horizontal: screenWidth*0.36,vertical: screenWidth*0.02),
+                width: size.width * 0.9,
+              height: size.height * 0.05,
                 borderRadius: BorderRadius.circular(8.0),
                 child: const ReuseableTextWidget(
                   text: "Confirm",
                   fontWeight: FontWeight.bold,
                   textColor: AppColors.white,
+                  
                 ),
               ),
-            ),
+            
           )
         ],
       ),

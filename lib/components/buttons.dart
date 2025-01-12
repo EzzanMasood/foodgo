@@ -55,7 +55,7 @@ class CustomOutlinedImageButton extends StatelessWidget {
   final EdgeInsets? padding;
 
   const CustomOutlinedImageButton({
-    Key? key,
+    super.key,
     required this.label,
     required this.onPressed,
     this.imagePath,
@@ -66,7 +66,7 @@ class CustomOutlinedImageButton extends StatelessWidget {
     this.width,
     this.height,
     this.borderColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -116,12 +116,12 @@ class CustomIconButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const CustomIconButton({
-    Key? key,
+    super.key,
     required this.icon,
     required this.onPressed,
     this.color = Colors.black,
     this.size = 24.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

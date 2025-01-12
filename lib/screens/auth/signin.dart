@@ -4,7 +4,8 @@ import 'package:foodgo/config/colors.dart';
 import 'package:foodgo/components/buttons.dart';
 import 'package:foodgo/config/style.dart';
 import 'package:foodgo/screens/auth/forgetpass.dart';
-import 'package:foodgo/screens/mainscreen.dart';
+import 'package:foodgo/screens/home/home_screen.dart';
+
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -114,7 +115,7 @@ class _LogInState extends State<LogIn> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MainScreen()));
+                          builder: (context) => const HomeScreen()));
                 },
                 padding: EdgeInsets.symmetric(
                     horizontal: screenWidth * 0.4,

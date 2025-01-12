@@ -5,7 +5,7 @@ import 'package:foodgo/config/style.dart';
 import 'package:foodgo/screens/cart.dart';
 
 class FoodDetails extends StatefulWidget {
-  const FoodDetails({Key? key}) : super(key: key);
+  const FoodDetails({super.key});
 
   @override
   State<FoodDetails> createState() => _FoodDetailsState();
@@ -44,14 +44,12 @@ class _FoodDetailsState extends State<FoodDetails> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Image Section
               Padding(
-                padding: EdgeInsets.only(right: screenWidth * 0.06),
+                padding: EdgeInsets.only(
+                    right: screenWidth * 0.06, left: screenWidth * 0.06),
                 child: Image.asset("assets/images/biryani.jpeg"),
               ),
               const SizedBox(height: 10),
-
-              // Restaurant Name and Rating
               const Text(
                 "Tava Restaurant",
                 style: TextStyle(
@@ -75,9 +73,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                   ),
                 ],
               ),
-              const SizedBox(height: 15),
-
-              // Price Section
+              const SizedBox(height: 5),
               const Row(
                 children: [
                   Text(
@@ -99,21 +95,17 @@ class _FoodDetailsState extends State<FoodDetails> {
                   ),
                 ],
               ),
-              const SizedBox(height: 15),
-
+              const SizedBox(height: 5),
               const Text(
                 "It's awesome food, it's great.",
                 style: TextStyle(fontSize: 14, color: Colors.grey),
               ),
-              const SizedBox(height: 10),
               const Text(
                 "It is a long established fact that a reader will "
                 "be distracted by the readable content of a page "
                 "when looking at its layout.",
                 style: TextStyle(fontSize: 14, color: Colors.grey),
               ),
-              const SizedBox(height: 15),
-
               const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -133,36 +125,38 @@ class _FoodDetailsState extends State<FoodDetails> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
-
-              // Slider, Labels, and Quantity Section
+              const SizedBox(
+                height: 5,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Spicy Level Section
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
                         "Spicy",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
                       ),
-                      Slider(
-                        value: _spiceLevel,
-                        onChanged: (value) {
-                          setState(() {
-                            _spiceLevel = value;
-                          });
-                        },
-                        min: 0,
-                        max: 1,
-                        activeColor: Colors.red,
-                        inactiveColor: Colors.grey.shade300,
-                        thumbColor: Colors.red,
+                      SizedBox(
+                        width: 100,
+                        child: Slider(
+                          value: _spiceLevel,
+                          onChanged: (value) {
+                            setState(() {
+                              _spiceLevel = value;
+                            });
+                          },
+                          min: 0,
+                          max: 1,
+                          activeColor: Colors.red,
+                          inactiveColor: Colors.grey.shade300,
+                          thumbColor: Colors.red,
+                        ),
                       ),
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -171,7 +165,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                             "Mild",
                             style: TextStyle(color: Colors.green, fontSize: 14),
                           ),
-                          SizedBox(width: 110),
+                          SizedBox(width: 40),
                           Text(
                             "Hot",
                             style: TextStyle(color: Colors.red, fontSize: 14),
@@ -180,7 +174,6 @@ class _FoodDetailsState extends State<FoodDetails> {
                       ),
                     ],
                   ),
-
                   Column(
                     children: [
                       const Text(
@@ -229,29 +222,55 @@ class _FoodDetailsState extends State<FoodDetails> {
           ),
         ),
       ),
-      bottomNavigationBar: Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-        child: Row(
-          children: [
-            CustomButton(onTap: (){}, 
-               border: Border.all(color: AppColors.onBoardButton),
-                borderRadius: BorderRadius.circular(8.0),
-                padding:EdgeInsets.symmetric(horizontal: screenWidth * 0.05,vertical: screenWidth*0.03) ,
-            child:const ReuseableTextWidget(text: "\$7.99",
-            )
-            ),
-            const SizedBox(width: 20,),
-             CustomButton(onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=> const CartScreen()));
-             }, 
-               border: Border.all(color: AppColors.onBoardButton),
-               borderRadius: BorderRadius.circular(8.0),
-              color: AppColors.onBoardButton,
-                padding:EdgeInsets.symmetric(horizontal: screenWidth * 0.21,vertical: screenWidth*0.03),
-            child:const ReuseableTextWidget(text: "Add to cart",
-            )
-            ),
+      bottomNavigationBar: Container(
+        width: screenWidth * 0.1,
+        height: screenWidth * 0.15,
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(8.0),
+          boxShadow: [
+            BoxShadow(
+                color: AppColors.grey.withOpacity(.2),
+                blurRadius: 3,
+                spreadRadius: 2,
+                offset: const Offset(0, .5))
           ],
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+          child: Row(
+            children: [
+              CustomButton(
+                  onTap: () {},
+                  border: Border.all(color: AppColors.onBoardButton),
+                  borderRadius: BorderRadius.circular(8.0),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: screenWidth * 0.05,
+                      vertical: screenWidth * 0.03),
+                  child: const ReuseableTextWidget(
+                    text: "\$7.99",
+                  )),
+              const SizedBox(
+                width: 20,
+              ),
+              CustomButton(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CartScreen()));
+                  },
+                  border: Border.all(color: AppColors.onBoardButton),
+                  borderRadius: BorderRadius.circular(8.0),
+                  color: AppColors.onBoardButton,
+                  padding: EdgeInsets.symmetric(
+                      horizontal: screenWidth * 0.21,
+                      vertical: screenWidth * 0.03),
+                  child: const ReuseableTextWidget(
+                    text: "Add to cart",
+                  )),
+            ],
+          ),
         ),
       ),
     );

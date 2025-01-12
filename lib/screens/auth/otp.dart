@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodgo/config/colors.dart';
 import 'package:foodgo/screens/auth/signin.dart';
+import 'package:foodgo/components/buttons.dart';
+import 'package:foodgo/config/style.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -13,6 +15,7 @@ class OtpScreen extends StatefulWidget {
 class _OtpScreenState extends State<OtpScreen> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -31,9 +34,7 @@ class _OtpScreenState extends State<OtpScreen> {
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
-            // showModalBottomSheet(context: context, builder: (context) {
-            //   return 
-            // },);
+       
           },
           icon: const Icon(
             Icons.arrow_back_ios,
@@ -98,41 +99,32 @@ class _OtpScreenState extends State<OtpScreen> {
               ),
             ),
             const SizedBox(height: 30),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  
+                Center(
+            child:  CustomButton(
+                onTap: () {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const LogIn()),
-                  );
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LogIn()));
                 },
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: screenWidth * 0.3,
-                    vertical: screenWidth * 0.03,
-                  ),
-                  backgroundColor: AppColors.onBoardButton,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                child: const Text(
-                  "Confirm",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+            
+                color: AppColors.onBoardButton,
+                padding: EdgeInsets.symmetric(horizontal: screenWidth*0.36,vertical: screenWidth*0.02),
+                width: size.width * 0.9,
+              height: size.height * 0.05,
+                borderRadius: BorderRadius.circular(8.0),
+                child: const ReuseableTextWidget(
+                  text: "Confirm",
+                  fontWeight: FontWeight.bold,
+                  textColor: AppColors.white,
+                  
                 ),
               ),
-            ),
+            
+          )
           ],
         ),
       ),
     );
   }
 }
-//screen
-//custom wudgets
-//code manage

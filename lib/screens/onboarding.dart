@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodgo/components/buttons.dart';
 import 'package:foodgo/config/colors.dart';
 import 'package:foodgo/config/style.dart';
-import 'package:foodgo/screens/access.dart';
+import 'package:foodgo/screens/signin_login.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});

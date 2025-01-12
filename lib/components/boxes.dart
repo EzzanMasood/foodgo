@@ -15,7 +15,7 @@ class BoxField extends StatelessWidget {
   final TextEditingController? controller;
 
   const BoxField({
-    Key? key,
+    super.key,
     required this.hintText,
     this.labelText,
     this.obscureText = false,
@@ -26,7 +26,7 @@ class BoxField extends StatelessWidget {
     this.padding,
     this.onChanged,
     this.controller, this.borderColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

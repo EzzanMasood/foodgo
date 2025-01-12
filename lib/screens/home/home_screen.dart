@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
           text: "Home Page",
           textColor: AppColors.white,
         ),
-        iconTheme: IconThemeData(color: AppColors.white),
+        iconTheme:const IconThemeData(color: AppColors.white),
         centerTitle: true,
         actions: const [
           Icon(Icons.notifications),
