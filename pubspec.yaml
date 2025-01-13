@@ -54,5 +54,6 @@ flutter:
     - assets/signin_signup/facebook.png
     - assets/mainscreen/pic.png
     - assets/images/
+    - assets/cart/
 
   # An image asset can refer to one or more resolution-specific "variants".

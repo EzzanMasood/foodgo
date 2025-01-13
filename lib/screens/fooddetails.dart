@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodgo/components/buttons.dart';
 import 'package:foodgo/config/colors.dart';
 import 'package:foodgo/config/style.dart';
-import 'package:foodgo/screens/cart.dart';
+import 'package:foodgo/screens/cart/cart.dart';
 
 class FoodDetails extends StatefulWidget {
   const FoodDetails({super.key});

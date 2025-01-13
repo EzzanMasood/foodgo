@@ -34,17 +34,16 @@ class _SearchScreenState extends State<SearchScreen> {
           },
         ),
         titleSpacing: 8,
-        title: Padding(
-          padding: EdgeInsets.only(right: screenWidth * 0.05),
-          child: BoxField(
-            hintText: "Tava Restaurant",
-            prefixIcon: Icons.search,
-            suffixIcon: Icons.cancel,
-            width: size.width * 1,
-            height: size.width * 0.09,
-            borderColor: AppColors.white,
-          ),
-        ),
+        title:  BoxField(
+              hintText: "Tava Restaurant",
+              prefixIcon: Icons.search,
+              suffixIcon: Icons.cancel,
+              width: size.width * 1,
+              height: size.width * 0.09,
+              borderColor: AppColors.white,
+            ),
+          
+      
         centerTitle: true,
       ),
       body: Column(
@@ -95,12 +94,14 @@ class _SearchScreenState extends State<SearchScreen> {
                     SizedBox(
                       height: 15,
                     ),
-                    Image(
-                      image: AssetImage(
-                        "assets/images/biryani.jpeg",
+                    Center(
+                      child: Image(
+                        image: AssetImage(
+                          "assets/images/biryani.jpeg",
+                        ),
+                        width: 250,
+                        height: 200,
                       ),
-                      width: 250,
-                      height: 200,
                     ),
                     SizedBox(
                       height: 10,

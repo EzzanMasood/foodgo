@@ -242,10 +242,12 @@ class _ResturantDetailsState extends State<ResturantDetails> {
                   horizontal: screenWidth * 0.20, vertical: screenWidth * 0.02),
               color: AppColors.onBoardButton,
               borderRadius: BorderRadius.circular(8.0),
-              child: const ReuseableTextWidget(
-                text: "View Availabe tables",
-                textColor: AppColors.white,
-                fontWeight: FontWeight.bold,
+              child:const Center(
+                child:  ReuseableTextWidget(
+                  text: "View Availabe tables",
+                  textColor: AppColors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               )),
         ),
       ),

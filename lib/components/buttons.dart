@@ -10,37 +10,52 @@ class CustomButton extends StatelessWidget {
   final Gradient? gradient;
   final Color? color;
   final Widget child;
+  final IconData? icon;
 
-  const CustomButton(
-      {super.key,
-      required this.onTap,
-      this.height,
-      this.width,
-      this.padding,
-      this.borderRadius,
-      this.border,
-      this.gradient,
-      this.color,
-      required this.child});
+  const CustomButton({
+    super.key,
+    required this.onTap,
+    this.height = 50.0, // Default height
+    this.width, // Optional width
+    this.padding = const EdgeInsets.symmetric(horizontal: 16.0),
+    this.borderRadius = const BorderRadius.all(Radius.circular(8.0)),
+    this.border,
+    this.gradient,
+    this.icon,
+    this.color = Colors.blue, // Default color
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: onTap,
-        child: Container(
-          height: height,
-          width: width,
-          padding: padding,
-          decoration: BoxDecoration(
-            border: border,
-            borderRadius: borderRadius,
-            gradient: gradient,
-            color: color,
-          ),
-          child: child,
-        ));
+    return InkWell(
+      onTap: onTap,
+      borderRadius: borderRadius,
+      child: Container(
+        height: height,
+        width: width ?? double.infinity, // Default to full width if not provided
+        padding: padding,
+        decoration: BoxDecoration(
+          border: border,
+          borderRadius: borderRadius,
+          gradient: gradient,
+          color: gradient == null ? color : null, // Use color if gradient isn't provided
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (icon != null) ...[
+              Icon(icon, color: Colors.white),
+              const SizedBox(width: 8.0), // Spacing between icon and child
+            ],
+            child,
+          ],
+        ),
+      ),
+    );
   }
 }
+
 
 class CustomOutlinedImageButton extends StatelessWidget {
   final String label;
